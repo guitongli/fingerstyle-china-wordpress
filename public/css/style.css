@@ -4,4 +4,15 @@
   display: flex;
   flex-wrap: nowrap;
 }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__item {
+  color: white;
+  text-decoration: none;
+}
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,400;1,700&family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;1,400;1,700&family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@1,600&display=swap");
+.container {
+  width: 600%;
+  height: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nav {
+  display: flex;
+}
+.nav__items__item {
+  color: white;
+  font-size: 1.6rem;
+  font-family: "Cabin", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  text-decoration: none;
+}
+.nav__items__item:hover {
+  color: rgba(244, 244, 244, 0.7);
+}
+
+@media screen and (max-width: 768px) {
+  .logo {
+    width: 200px;
+  }
+
+  .nav {
+    position: fixed;
+    margin: 0;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    justify-content: start;
+    align-items: center;
+    visibility: hidden;
+    z-index: 99;
+  }
+  .nav__items {
+    flex-direction: column;
+  }
+  .nav__items__item {
+    color: white;
+    font-size: 4rem;
+    font-family: "Cabin", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    text-decoration: none;
+  }
+  .nav__items__item:hover {
+    color: rgba(244, 244, 244, 0.7);
+  }
+
+  .burger {
+    position: absolute;
+    font-size: 0px;
+    right: 10px;
+    top: 40px;
+    width: 28px;
+    height: 3px;
+    background: #ffffff;
+    transition: all 0.5s ease-in-out;
+  }
+  .burger::before {
+    display: inline-block;
+    content: " ";
+    position: absolute;
+    top: -8px;
+    width: 28px;
+    height: 3px;
+    background: #ffffff;
+    transition: all 0.5s ease-in-out;
+  }
+  .burger::after {
+    content: " ";
+    position: absolute;
+    top: 8px;
+    width: 20px;
+    height: 3px;
+    background: #ffffff;
+    transition: all 0.5s ease-in-out;
+  }
+  .burger.open {
+    transform: rotate(90deg);
+    background: transparent;
+  }
+  .burger.open::before {
+    transform: rotate(45deg) translate(5px, 8px);
+  }
+  .burger.open::after {
+    transform: rotate(-45deg) translate(3px, -6.5px);
+    width: 28px;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
