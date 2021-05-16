@@ -17,18 +17,17 @@ gsap.to(sections, {
 
 
  
-    // const hamburger = document.getElementsByClassName('.burger')[0];
+    const hamburger = document.getElementsByClassName('.burger')[0];
     // $hamburger= 
-	const nav = useRef();
-	const menuNav = useRef();
-	const navLink = useRef();
-	const navItem = useRef([]);
-	var showMenu = false;
-	const video = useRef();
-	const producer = useRef();
+	const nav = document.querySelector('.nav');
+	const menuNav= document.querySelector('.menu-nav');
+	 
+	const navItem = document.querySelector('.nav__item__items')
+	var showMenu = false; 
 
 	function toggleMenu() {
 		if (!showMenu) {
+			console.log('clicked');
 			hamburger.classList.add('open');
 			nav.current.className = "nav open";
 			menuNav.current.className = "menu-nav open";
