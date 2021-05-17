@@ -63,10 +63,19 @@
     font-family: "Cabin", sans-serif;
     font-weight: 800;
     font-style: italic;
+    visibility: hidden;
     text-decoration: none;
   }
   .nav__items__item:hover {
     color: rgba(244, 244, 244, 0.7);
+  }
+  .nav__items__item.open {
+    visibility: visible;
+    transform: translateX(0);
+    transition: all 0.5s ease-in-out;
+  }
+  .nav.open {
+    visibility: visible;
   }
 
   .burger {
@@ -74,6 +83,7 @@
     font-size: 0px;
     right: 10px;
     top: 40px;
+    z-index: 100;
     width: 28px;
     height: 3px;
     background: #ffffff;
