@@ -1,9 +1,12 @@
 @import "config";
 
 .nav {
-	display: flex;
+	// display: flex;
+	justify-content: end;
 	&__items {
 		&__item {
+			// justify-content: end;
+			padding-right: 1.5rem;
 			color: white;
 			font-size: 1.6rem;
 			font-family: $sans;
@@ -29,28 +32,33 @@
 		height: 100vh;
 		width: 100vw;
 		background-color: black;
-		justify-content: start;
+		justify-content: center;
 		align-items: center;
 		visibility: hidden;
 		z-index: 99;
+		transform: translate(0);
+		@include transition-ease;
 		&__items {
 			flex-direction: column;
-
 			&__item {
 				// flex-direction: column;
 				color: white;
 				font-size: 4rem;
 				font-family: $sans;
 				font-weight: 800;
-				font-style: italic;
+				font-style: oblique;
 				visibility: hidden;
 				text-decoration: none;
+
 				&:hover {
 					color: rgb(244, 244, 244, 0.7);
 				}
 				&.open {
 					visibility: visible;
-					transform: translateX(0);
+					justify-content: center;
+					// transform: translateX(0);
+					// transform: tranlsateY(100%);
+					transform: translateX(-15vw);
 					@include transition-ease;
 				}
 			}
@@ -105,6 +113,11 @@
 				// background: transparent;
 			}
 		}
+	}
+}
+@for $i from 1 through 4 {
+	.nav__items__item:nth-child(#{$i}) {
+		transition-delay: ($i * 0.07s)+0.05s;
 	}
 }
 
