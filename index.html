@@ -31,13 +31,11 @@
 		<title>Fingerstyle</title>
 	</head>
 	<body>
-		<header
-			class="d-flex p-3 justify-content-between align-items-center bg-dark"
-		>
-			<div class="col-sm-3 my-2">
+		<header class="d-flex p-3 justify-content-between align-items-center">
+			<div class="col-sm-2 my-2">
 				<img src="./assets/logo.png" class="logo img-fluid" />
 			</div>
-			<div class="nav col-sm-9 justify-content-end my-2 pt-1" id="nav">
+			<div class="nav col-sm-10 justify-content-end my-2 pt-4" id="nav">
 				<ul class="nav__items d-flex text-light">
 					<a class="nav__items__item mx-2">CONCERTS</a>
 					<a class="nav__items__item mx-2">CONTESTS</a>
@@ -52,20 +50,63 @@
 		<main>
 			<div class="banner">
 				<div class="container">
+					<section class="intro panel">
+						<p>
+							FingerstyleChina is the biggest network for
+							fingerstyle guitar lovers
+						</p>
+						<div class="arrow bounce"></div>
+					</section>
 					<section class="panel red">
-						ONE
-						<img src="./assets/event1.png" alt="" />
+						<img src="./assets/event1.png" class="banner-item" />
 					</section>
 					<section class="panel orange">
-						TWO
-						<img src="./assets/event2.jpeg" alt="" />
+						<img src="./assets/event2.jpeg" class="banner-item" />
 					</section>
-					<section class="panel purple">THREE</section>
-					<section class="panel green">FOUR</section>
-					<section class="panel gray">FIVE</section>
+					<section class="panel">
+						<img src="./assets/event2.jpeg" class="banner-item" />
+						<!-- <div class="arrow bounce"></div> -->
+						<!-- <p>
+							FingerstyleChina is the biggest network for
+							fingerstyle guitar lovers
+						</p> -->
+					</section>
 				</div>
 			</div>
-			<div class="calendar"></div>
+			<div class="calendar">
+				<div id="filters" class="button-group">
+					<button class="btn is-checked" filter="news">News</button>
+				</div>
+				<div id="filters" class="button-group">
+					<button class="btn is-checked" filter="contests">
+						Concerts
+					</button>
+				</div>
+				<div id="filters" class="button-group">
+					<button class="btn is-checked" filter="talents">
+						Talents
+					</button>
+				</div>
+				<div id="filters" class="button-group">
+					<button class="btn is-checked" filter="concerts">
+						Concerts
+					</button>
+				</div>
+				<div class="grid">
+					<div class="grid-item news border">
+						<img src="./assets/event1.png" class="img-fluid" />
+					</div>
+					<div class="grid-item contest border">
+						<img src="./assets/event2.jpeg" class="img-fluid" />
+					</div>
+					<div class="grid-item talents border">
+						<img src="./assets/event1.png" class="img-fluid" />
+					</div>
+					<div class="grid-item concerts border">
+						<img src="./assets/event2.jpeg" class="img-fluid" />
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer id="footer" class="bg-dark text-white py-5">
 			<div class="container">

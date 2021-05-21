@@ -93,3 +93,38 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
+//sticky menu when scrolling up
+var lastScrollTop = 0;
+
+// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
+window.addEventListener("scroll", function(){ // or window.addEventListener("scroll"....
+   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+   if (st > lastScrollTop && st>1500){
+      $('#nav').addClass('sticky');
+          //  alert('gotcha')
+   } else {
+      $('#nav').removeClass('sticky');
+   
+ 
+   }
+   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+}, false);
+
+    var $grid = $('.grid').isotope({
+        itemSelector: ".grid-item",
+        layoutMode: 'fitRows',
+//         layoutMode: 'masonry',
+//         persentPosition:true,
+// masonry: {
+//   columnWidth: 50
+// }
+    });
+
+
+    $(".button-group").on("click", "button", function () {
+
+        var filterValue = $(this).attr("data-filter");
+        console.log('clicked', filterValue);
+        $grid.isotope({ filter: filterValue });
+    });
