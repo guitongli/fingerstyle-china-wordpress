@@ -7,32 +7,50 @@
 		<link rel="stylesheet" href="introduction.css" />
 	</head>
 	<body>
-		<div class="introduction">
-			<div class="scroller">
-				<content class="orange">
-					<div class="text">
-						This is some text inside of a div block.
-					</div>
-				</content>
-
-				<content class="black">
-					<div class="text-wrap">
-						<div class="panel-text blue-text">Blue</div>
-						<div class="panel-text red-text">Red</div>
-						<div class="panel-text orange-text">Orange</div>
-						<div class="panel-text purple-text">Purple</div>
-					</div>
-
-					<div class="p-wrap">
-						<div class="panel blue"></div>
-						<div class="panel red"></div>
-						<div class="panel orange"></div>
-						<div class="panel purple"></div>
-					</div>
-				</content>
-
-				<content class="blue"></content>
+		<header class="d-flex p-3 justify-content-between align-items-center">
+			<div class="col-sm-2 my-2">
+				<img src="./assets/logo.png" class="logo img-fluid" />
 			</div>
+			<div class="nav col-sm-10 justify-content-end my-2 pt-4" id="nav">
+				<ul class="nav__items d-flex text-light">
+					<a class="nav__items__item mx-2">CONCERTS</a>
+					<a class="nav__items__item mx-2">CONTESTS</a>
+					<a class="nav__items__item mx-2">CALENDER</a>
+					<a class="nav__items__item mx-2">CONNECT</a>
+				</ul>
+			</div>
+			<div class="burger" id="burger">
+				<span className="burger-line"></span>
+			</div>
+		</header>
+		<div class="container">
+			<div class="description panel blue">
+				<div>
+					<h1>Horizontal snapping sections (advanced)</h1>
+					<p>
+						Scroll vertically to scrub the horizontal animation. It
+						also dynamically snaps to the sections in an organic way
+						based on the velocity. The snapping occurs based on the
+						natural ending position after momentum is applied, not a
+						simplistic "wherever it is when the user stops". The
+						fading/scaling happens at a consistent rate, not based
+						on how fast you scroll.
+					</p>
+					<div class="scroll-down">
+						Scroll down
+						<div class="arrow"></div>
+					</div>
+				</div>
+			</div>
+
+			<section class="panel red">
+				ONE
+				<img src="./assets/event1.png" alt="" />
+			</section>
+			<section class="panel orange">TWO</section>
+			<section class="panel purple">THREE</section>
+			<section class="panel green">FOUR</section>
+			<section class="panel gray">FIVE</section>
 		</div>
 
 		<script

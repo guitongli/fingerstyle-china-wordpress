@@ -1,96 +1,70 @@
 gsap.registerPlugin(ScrollTrigger);
-let bodyScrollBar = Scrollbar.init(document.body, {
-  damping: 0.1,
-  delegateTo: document,
+
+let duration = 10,
+		sections = gsap.utils.toArray(".panel"),
+		sectionIncrement = duration / (sections.length - 1),
+		tl = gsap.timeline({
+			scrollTrigger: {
+				trigger: ".container",
+				pin: true,
+				scrub: 1,
+        snap: 1 / (sections.length - 1),
+				start: "top top",
+				end: "+=5000"
+			}
+		});
+
+tl.to(sections, {
+  xPercent: -100 * (sections.length - 1),
+  duration: duration,
+  ease: "none"
 });
-ScrollTrigger.scrollerProxy(".scroller", {
-  scrollTop(value) {
-    if (arguments.length) {
-      bodyScrollBar.scrollTop = value;
-    }
-    return bodyScrollBar.scrollTop;
+
+
+
+// everything below this is just for the fading/scaling up which is NOT scrubbed - it's all dynamic, triggered when each section enters/leaves so that the fading/scaling occurs at a consistent rate no matter how fast you scroll!
+sections.forEach((section, index) => {
+  let tween = gsap.from(section, {
+    opacity: 0, 
+    scale: 0.6, 
+    duration: 1, 
+    force3D: true, 
+    paused: true
+  });
+  addSectionCallbacks(tl, {
+    start: sectionIncrement * (index - 0.99),
+    end: sectionIncrement * (index + 0.99),
+    onEnter: () => tween.play(),
+    onLeave: () => tween.reverse(),
+    onEnterBack: () => tween.play(),
+    onLeaveBack: () => tween.reverse()
+  });
+  index || tween.progress(1); // the first tween should be at its end (already faded/scaled in)
+});
+
+
+
+
+
+// helper function that lets us define a section in a timeline that spans between two times (start/end) and lets us add onEnter/onLeave/onEnterBack/onLeaveBack callbacks
+function addSectionCallbacks(timeline, {start, end, param, onEnter, onLeave, onEnterBack, onLeaveBack}) {
+  let trackDirection = animation => { // just adds a "direction" property to the animation that tracks the moment-by-moment playback direction (1 = forward, -1 = backward)
+    let onUpdate = animation.eventCallback("onUpdate"), // in case it already has an onUpdate
+        prevTime = animation.time();
+    animation.direction = animation.reversed() ? -1 : 1;
+    animation.eventCallback("onUpdate", () => {
+      let time = animation.time();
+      if (prevTime !== time) {
+        animation.direction = time < prevTime ? -1 : 1;
+        prevTime = time;
+      }
+      onUpdate && onUpdate.call(animation);
+    });
   },
-});
-bodyScrollBar.addListener(ScrollTrigger.update);
+      empty = v => v; // in case one of the callbacks isn't defined
+  timeline.direction || trackDirection(timeline); // make sure direction tracking is enabled on the timeline
+  start >= 0 && timeline.add(() => ((timeline.direction < 0 ? onLeaveBack : onEnter) || empty)(param), start);
+  end <= timeline.duration() && timeline.add(() => ((timeline.direction < 0 ? onEnterBack : onLeave) || empty)(param), end);
+}
 
 
-
-
-
-
-
-gsap.set(".panel", { zIndex: (i, target, targets) => targets.length - i });
-
-var images = gsap.utils.toArray('.panel:not(.purple)');
-
-images.forEach((image, i) => {
-  
-  var tl = gsap.timeline({
-    
-    scrollTrigger: {
-      trigger: "section.black",
-      scroller: ".scroller",
-      start: () => "top -" + (window.innerHeight*(i+0.5)),
-      end: () => "+=" + window.innerHeight,
-      scrub: true,
-      toggleActions: "play none reverse none",
-      invalidateOnRefresh: true,     
-    }
-    
-  })
-  
-  tl
-  .to(image, { height: 0 })
-  ;
-  
-});
-
-
-
-
-
-
-
-gsap.set(".panel-text", { zIndex: (i, target, targets) => targets.length - i });
-
-var texts = gsap.utils.toArray('.panel-text');
-
-texts.forEach((text, i) => {
-  
-  var tl = gsap.timeline({
-    
-    scrollTrigger: {
-      trigger: "section.black",
-      scroller: ".scroller",
-      start: () => "top -" + (window.innerHeight*i),
-      end: () => "+=" + window.innerHeight,
-      scrub: true,
-      toggleActions: "play none reverse none",
-      invalidateOnRefresh: true,     
-    }
-    
-  })
-  
-  tl
-  .to(text, { duration: 0.33, opacity: 1, y:"50%" })  
-  .to(text, { duration: 0.33, opacity: 0, y:"0%" }, 0.66)
-  ;
-  
-});
-
-
-
-
-
-ScrollTrigger.create({
-
-    trigger: "section.black",
-    scroller: ".scroller",
-    scrub: true,
-    markers: true,
-    pin: true,
-    start: () => "top top",
-    end: () => "+=" + ((images.length + 1) * window.innerHeight),
-    invalidateOnRefresh: true,
-
-});
