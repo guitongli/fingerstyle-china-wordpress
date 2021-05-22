@@ -50,30 +50,206 @@
 		<main>
 			<div class="banner">
 				<div class="container">
-					<section class="intro panel">
-						<p>
-							FingerstyleChina is the biggest network for
-							fingerstyle guitar lovers
-						</p>
-						<div class="arrow bounce"></div>
-					</section>
+					<div class="description panel blue">
+						<div>
+							<h1>Horizontal snapping sections (advanced)</h1>
+							<p>
+								Scroll vertically to scrub the horizontal
+								animation. It also dynamically snaps to the
+								sections in an organic way based on the
+								velocity. The snapping occurs based on the
+								natural ending position after momentum is
+								applied, not a simplistic "wherever it is when
+								the user stops". The fading/scaling happens at a
+								consistent rate, not based on how fast you
+								scroll.
+							</p>
+							<div class="scroll-down">
+								Scroll down
+								<div class="arrow"></div>
+							</div>
+						</div>
+					</div>
+
 					<section class="panel red">
-						<img src="./assets/event1.png" class="banner-item" />
+						ONE
+						<img src="./assets/event1.png" class="panel-img" />
 					</section>
 					<section class="panel orange">
-						<img src="./assets/event2.jpeg" class="banner-item" />
+						TWO <img src="./assets/event1.png" class="panel-img" />
 					</section>
-					<section class="panel">
-						<img src="./assets/event2.jpeg" class="banner-item" />
-						<!-- <div class="arrow bounce"></div> -->
-						<!-- <p>
-							FingerstyleChina is the biggest network for
-							fingerstyle guitar lovers
-						</p> -->
+					<section class="panel purple">
+						THREE
+						<img src="./assets/event1.png" class="panel-img" />
+					</section>
+					<section class="panel green">
+						FOUR <img src="./assets/event1.png" class="panel-img" />
 					</section>
 				</div>
 			</div>
-			<div class="calendar">
+			<!-- <div class="introduction">
+				<div class="cInnerContent">
+					<h1 class="header-section gs_reveal ipsType_center">
+						Scroll down and up to see different reveal animations
+					</h1>
+
+					<div class="features">
+						<div
+							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+						>
+							<div
+								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
+							>
+								<div class="card">
+									<img
+										width="479"
+										src="https://picsum.photos/479/479?index=1"
+										alt=""
+									/>
+								</div>
+							</div>
+
+							<div class="ipsGrid_span7 ipsType_left">
+								<h2 class="heading_large gs_reveal">
+									Create amazing
+									<strong>SVG</strong> animations
+								</h2>
+								<p class="gs_reveal">
+									<a href="https://greensock.com/drawsvg/"
+										>DrawSVGPlugin</a
+									>
+									allows you to progressively reveal (or hide)
+									SVG strokes to make them look like they're
+									being drawn.
+									<a href="https://greensock.com/morphsvg/"
+										>MorphSVGPlugin</a
+									>
+									to Morph any SVG shape into any other shape
+									smoothly regardless of the number of points
+									in each.
+									<a href="/docs/v3/Plugins/MotionPathPlugin"
+										>MotionPathPlugin</a
+									>
+									allows you to easily move any object along a
+									path.
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+						>
+							<div class="ipsGrid_span7 ipsType_right">
+								<h2 class="heading_large gs_reveal">
+									Supercharge immersive
+									<strong>WebGL</strong> experiences
+								</h2>
+								<p class="gs_reveal">
+									GreenSock is used in some of the most
+									popular
+									<a href="//threejs.org/">Three.js</a>
+									powered WebGL projects. Animate any object
+									in a scene.
+									<a href="https://greensock.com/PixiPlugin/"
+										>PixiPlugin</a
+									>
+									makes animating
+									<a href="//www.pixijs.com/">Pixi.js</a>
+									objects with GSAP a breeze. Animate
+									position, scale, color effects and more with
+									all the power and control of GSAP and the
+									rendering speed of Pixi.js.
+								</p>
+							</div>
+
+							<div
+								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
+							>
+								<div class="card">
+									<img
+										width="479"
+										src="https://picsum.photos/479/479?index=2"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+
+						<div
+							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+						>
+							<div
+								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
+							>
+								<div class="card">
+									<img
+										width="479"
+										src="https://picsum.photos/479/479?index=3"
+										alt=""
+									/>
+								</div>
+							</div>
+
+							<div class="ipsGrid_span7 ipsType_left">
+								<h2 class="heading_large gs_reveal">
+									Control performant
+									<strong>Canvas</strong> animations
+								</h2>
+								<p class="gs_reveal">
+									GSAP makes animating with Canvas even easier
+									by providing an easier way to look and
+									sequence animations. GSAP works great with
+									<a
+										href="//www.adobe.com/products/animate.html"
+										>Adobe Animate</a
+									>
+									and
+									<a href="//createjs.com/easeljs">EaseJS</a>
+									through GSAP's
+									<a href="https://greensock.com/easelplugin/"
+										>EaselJSPlugin</a
+									>.
+								</p>
+							</div>
+						</div>
+
+						<div
+							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
+						>
+							<div class="ipsGrid_span7 ipsType_right">
+								<h2 class="heading_large gs_reveal">
+									<strong>Award winning</strong> websites
+								</h2>
+								<p class="gs_reveal">
+									GSAP is used on over 8,500,000 sites and
+									over 1,000 sites featured on
+									<a
+										href="https://www.awwwards.com/websites/gsap-animation/"
+										target="_blank"
+										>Awwwards</a
+									>. For some of our favorites, check out
+									<a href="https://greensock.com/showcase/"
+										>our showcase</a
+									>.
+								</p>
+							</div>
+
+							<div
+								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
+							>
+								<div class="card">
+									<img
+										width="479"
+										src="https://picsum.photos/479/479?index=4"
+										alt=""
+									/>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<!-- <div class="calendar">
 				<div id="filters" class="button-group">
 					<button class="btn is-checked" filter="news">News</button>
 				</div>
@@ -106,7 +282,7 @@
 						<img src="./assets/event2.jpeg" class="img-fluid" />
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</main>
 		<footer id="footer" class="bg-dark text-white py-5">
 			<div class="container">
@@ -208,10 +384,16 @@
 			integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q=="
 			crossorigin="anonymous"
 		></script>
-		<script
+		<!-- <script
 			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"
 			integrity="sha512-IFHLRBbvAOJqC8OBEvPO/3ZnuCe/6nCHtmYk82FPOXI/scNNncm5czPI0aJflJABm6VPNt7Nn3MPMhi/siyLKw=="
 			crossorigin="anonymous"
+		></script> -->
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.6.1/smooth-scrollbar.min.js"
+			integrity="sha512-UmrYi6FvCoDgKRTzLOvAj/egIrJtoTIQV0u/stO1h5f4DQNcXnhwnY0rel5zduc3CNqO6LfVI8ZaGUKCrLIo7g=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
 		></script>
 		<script src="index.js"></script>
 	</body>
