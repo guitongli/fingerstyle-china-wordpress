@@ -2,9 +2,29 @@
 
 gsap.registerPlugin(ScrollTrigger);
 
+const words = ['True Passion for Guitar Music', 'Asia\'s biggest fingerstyle network'];
+let cursor = gsap.to('.cursor',{opacity: 0, ease:'power2.inOut', repeat: -1, duration:1})
+
+let boxTl=gsap.timeline();
+boxTl.to('.box', {duration:1, width: '35vw', delay:1, ease: 'power4.inOut'}).from('.equation', {
+  duration:1,x:'-50vw', ease:'power3.out', onComplete:()=>masterTl.play()
+}).to('.box',{
+  duration:1, height:"7vw", ease:'elastic.out'
+}).to('.box',{duration:2, autoAlpha:0.5, yoyo: true, repeat:-1});
+let masterTl = gsap.timeline({repeat: -1}).pause();
+words.forEach(word=>{
+  let tl=gsap.timeline({delay:1,duration:2,repeat:1, yoyo:true, repeatDelay:3});
+  tl.to('.text',{
+    duration:1, text:word, 
+  }); 
+  masterTl.add(tl)
+})
+
+
+// banner
 let duration = 10,
 		sections = gsap.utils.toArray(".panel"),
-		sectionIncrement = duration / (sections.length - 1),
+		sectionIncrement = duration / (sections.length-1),
 		tl = gsap.timeline({
 			scrollTrigger: {
 				trigger: ".container",
@@ -17,7 +37,7 @@ let duration = 10,
 		});
 
 tl.to(sections, {
-  xPercent: -100 * (sections.length - 1),
+  xPercent: -100 * (sections.length -1),
   duration: duration,
   ease: "none"
 });
@@ -34,7 +54,7 @@ sections.forEach((section, index) => {
     paused: true
   });
   addSectionCallbacks(tl, {
-    start: sectionIncrement * (index - 0.99),
+    start: sectionIncrement * (index - 0.98),
     end: sectionIncrement * (index + 0.99),
     onEnter: () => tween.play(),
     onLeave: () => tween.reverse(),
@@ -70,7 +90,6 @@ function addSectionCallbacks(timeline, {start, end, param, onEnter, onLeave, onE
 }
 
 
- 
 
 
 // const hamburger = document.getElementsByClassName('.burger')[0];
@@ -154,78 +173,71 @@ var lastScrollTop = 0;
 // element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
 window.addEventListener("scroll", function () { // or window.addEventListener("scroll"....
   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-  if (st > lastScrollTop && st > 1500) {
-    $('#nav').addClass('sticky');
-    //  alert('gotcha')
-  } else {
-    $('#nav').removeClass('sticky');
+  if (st > lastScrollTop) {
+    console.log(st)
+    $('header').removeClass('sticky');
+   
+  } else if (st< lastScrollTop && st > 6500){
+     console.log('added')
+    $('header').addClass('sticky');
 
 
-  }
+
+  }  else if (st< lastScrollTop && st < 6500){
+     console.log('added')
+    $('header').removeClass('sticky');
+
+
+
+  } 
   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 
-// var $grid = $('.grid').isotope({
-//   itemSelector: ".grid-item",
-//   layoutMode: 'fitRows',
-//   //         layoutMode: 'masonry',
-//   //         persentPosition:true,
-//   // masonry: {
-//   //   columnWidth: 50
-//   // }
-// });
+var $grid = $('.grid').isotope({
+  itemSelector: ".grid-item",
+  layoutMode: 'fitRows',
+  //         layoutMode: 'masonry',
+  //         persentPosition:true,
+  // masonry: {
+  //   columnWidth: 50
+  // }
+});
 
 
-// $(".button-group").on("click", "button", function () {
+$(".button-group").on("click", "button", function () {
 
-//   var filterValue = $(this).attr("data-filter");
-//   console.log('clicked', filterValue);
-//   $grid.isotope({ filter: filterValue });
-// });
+  var filterValue = $(this).attr("data-filter");
+  console.log('clicked', filterValue);
+  $grid.isotope({ filter: filterValue });
+});
 
+ 
+// listings
+ var animation;
 
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
+gsap.set("#motionSVG", { scale: 0.7, autoAlpha: 1 });
+gsap.set("#tractor", {transformOrigin: "50% 50%"});
 
-// intruduction with animation
-
-// function animateFrom2(elem, direction) {
-//   direction = direction || 1;
-//   var x = 0,
-//       y = direction * 100;
-//   if(elem.classList.contains("gs_reveal_fromLeft")) {
-//     x = -100;
-//     y = 0;
-//   } else if (elem.classList.contains("gs_reveal_fromRight")) {
-//     x = 100;
-//     y = 0;
-//   }
-//   elem.style.transform = "translate(" + x + "px, " + y + "px)";
-//   elem.style.opacity = "0";
-//   gsap.fromTo(elem, {x: x, y: y, autoAlpha: 0}, {
-//     duration: 1.25, 
-//     x: 0,
-//     y: 0, 
-//     autoAlpha: 1, 
-//     ease: "expo", 
-//     overwrite: "auto"
-//   });
-// }
-
-// function hide(elem) {
-//   gsap.set(elem, {autoAlpha: 0});
-// }
-
-// document.addEventListener("DOMContentLoaded", function() {
-//   gsap.registerPlugin(ScrollTrigger);
-  
-//   gsap.utils.toArray(".gs_reveal").forEach(function(elem) {
-//     hide(elem); // assure that the element is hidden when scrolled into view
-    
-//     ScrollTrigger.create({
-//       trigger: elem,
-//       onEnter: function() { animateFrom2(elem) }, 
-//       onEnterBack: function() { animateFrom(elem, -1) },
-//       onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
-//     });
-//   });
-// });
+animation = gsap.to("#motionSVG", {
+  scrollTrigger: {
+    trigger: "#motionPath",
+    start: "top 20%",
+    end: "bottom 20%",
+    scrub: 1,
+    //markers: true,
+    onUpdate: self => {
+      gsap.to("#tractor", {rotation: () => self.direction === 1 ? 0 : -180, overwrite: 'auto'});
+    }
+  },
+  duration: 10,
+  ease: "none",
+  immediateRender: true,
+  motionPath: {
+    path: "#motionPath",
+    align: "#motionPath",
+    alignOrigin: [0.5, 0.5],
+    autoRotate: 90,
+  }
+});
