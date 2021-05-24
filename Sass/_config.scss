@@ -1,5 +1,5 @@
 $black: #272727;
-$navy: #14213d;
+$navy: #1d273d;
 $yellow: #fca311;
 $gray: #e5e5e5;
 $white: #ffffff;
@@ -14,7 +14,19 @@ $sans: "Cabin", sans-serif;
 	margin: 0;
 	padding: 0;
 }
-
+a {
+	text-decoration: none;
+	color: $navy;
+	&:hover {
+		text-decoration: none;
+		color: $yellow;
+	}
+}
+.btn {
+	&:hover {
+		color: $yellow;
+	}
+}
 @mixin transition-ease {
 	transition: all 0.5s ease-in-out;
 }

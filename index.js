@@ -92,7 +92,7 @@ function addSectionCallbacks(timeline, {start, end, param, onEnter, onLeave, onE
 
 
 
-// const hamburger = document.getElementsByClassName('.burger')[0];
+//burger menu
 $('#burger').click(function () {
 
   toggleMenu();
@@ -125,6 +125,9 @@ function toggleMenu() {
   }
 }
 
+
+// animated listing
+
 function animateFrom(elem, direction) {
   direction = direction || 1;
   var x = 0,
@@ -152,33 +155,33 @@ function hide(elem) {
   gsap.set(elem, { autoAlpha: 0 });
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  gsap.registerPlugin(ScrollTrigger);
-
+ 
   gsap.utils.toArray(".gs_reveal").forEach(function (elem) {
     hide(elem); // assure that the element is hidden when scrolled into view
-
+// clearconsole();
     ScrollTrigger.create({
       trigger: elem,
+    
       onEnter: function () { animateFrom(elem) },
       onEnterBack: function () { animateFrom(elem, -1) },
       onLeave: function () { hide(elem) } // assure that the element is hidden when scrolled into view
     });
   });
-});
+
+
+
 
 //sticky menu when scrolling up
 var lastScrollTop = 0;
 
-// element should be replaced with the actual target element on which you have applied scroll, use window in case of no target element.
 window.addEventListener("scroll", function () { // or window.addEventListener("scroll"....
   var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
   if (st > lastScrollTop) {
-    console.log(st)
+ 
     $('header').removeClass('sticky');
    
   } else if (st< lastScrollTop && st > 6500){
-     console.log('added')
+ 
     $('header').addClass('sticky');
 
 
@@ -193,51 +196,34 @@ window.addEventListener("scroll", function () { // or window.addEventListener("s
   lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 
-var $grid = $('.grid').isotope({
-  itemSelector: ".grid-item",
-  layoutMode: 'fitRows',
-  //         layoutMode: 'masonry',
-  //         persentPosition:true,
-  // masonry: {
-  //   columnWidth: 50
-  // }
-});
-
-
-$(".button-group").on("click", "button", function () {
-
-  var filterValue = $(this).attr("data-filter");
-  console.log('clicked', filterValue);
-  $grid.isotope({ filter: filterValue });
-});
 
  
 // listings
- var animation;
+//  var animation;
 
-gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
+// gsap.registerPlugin(MotionPathPlugin, ScrollTrigger);
 
-gsap.set("#motionSVG", { scale: 0.7, autoAlpha: 1 });
-gsap.set("#tractor", {transformOrigin: "50% 50%"});
+// gsap.set("#motionSVG", { scale: 0.7, autoAlpha: 1 });
+// gsap.set("#tractor", {transformOrigin: "50% 50%"});
 
-animation = gsap.to("#motionSVG", {
-  scrollTrigger: {
-    trigger: "#motionPath",
-    start: "top 20%",
-    end: "bottom 20%",
-    scrub: 1,
-    //markers: true,
-    onUpdate: self => {
-      gsap.to("#tractor", {rotation: () => self.direction === 1 ? 0 : -180, overwrite: 'auto'});
-    }
-  },
-  duration: 10,
-  ease: "none",
-  immediateRender: true,
-  motionPath: {
-    path: "#motionPath",
-    align: "#motionPath",
-    alignOrigin: [0.5, 0.5],
-    autoRotate: 90,
-  }
-});
+// animation = gsap.to("#motionSVG", {
+//   scrollTrigger: {
+//     trigger: "#motionPath",
+//     start: "top 20%",
+//     end: "bottom 20%",
+//     scrub: 1,
+//     //markers: true,
+//     onUpdate: self => {
+//       gsap.to("#tractor", {rotation: () => self.direction === 1 ? 0 : -180, overwrite: 'auto'});
+//     }
+//   },
+//   duration: 10,
+//   ease: "none",
+//   immediateRender: true,
+//   motionPath: {
+//     path: "#motionPath",
+//     align: "#motionPath",
+//     alignOrigin: [0.5, 0.5],
+//     autoRotate: 90,
+//   }
+// });

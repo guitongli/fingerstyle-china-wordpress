@@ -1,372 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-			integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-			integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
-			crossorigin="anonymous"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-			integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-			crossorigin="anonymous"
-		/>
-		<link rel="stylesheet" href="style.css" />
-		<title>Fingerstyle</title>
-	</head>
-	<body>
-		<header class="d-flex p-3 justify-content-between align-items-center">
-			<div class="col-sm-2 my-2">
-				<img src="./assets/logo.png" class="logo img-fluid" />
-			</div>
-			<div class="nav col-sm-10 justify-content-end my-2 pt-4" id="nav">
-				<ul class="nav__items d-flex text-light">
-					<a class="nav__items__item mx-2">CONCERTS</a>
-					<a class="nav__items__item mx-2">CONTESTS</a>
-					<a class="nav__items__item mx-2">CALENDER</a>
-					<a class="nav__items__item mx-2">CONNECT</a>
-				</ul>
-			</div>
-			<div class="burger" id="burger">
-				<span className="burger-line"></span>
-			</div>
-		</header>
-		<main>
-			<div class="banner">
-				<div class="container">
-					<section class="description panel blue">
-						<div class="intro">
-							<h1>
-								<span class='box'></span>
-								<span class='equation'>FingerstyleChina is</span>
-								 <span class='text'></span>
-								 <span class='cursor'>_</span>
-							</h1>
-							 
-							
-							<div class="arrow bounce"></div>
-						</div>
-					</section>
 
-					<section class="panel red">
-						<span class='banner-date'>
-							20 Jun 2021
-						
-							
-						</span>
-						<p class='banner-event'>Live Concert</p>
-						<img src="./assets/asset1.jpg" />
-					</section>
-					<section class="panel orange">
-						<span class ='banner-date'>
-							20 Aug 2021
-						</span>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+		integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+		integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet" href="style.css" />
+	<title>Fingerstyle</title>
+</head>
+
+<body>
+	<header class="d-flex p-3 justify-content-between align-items-center">
+		<div class="col-sm-2 my-2">
+			<img src="./assets/logo.png" class="logo img-fluid" />
+		</div>
+		<div class="nav col-sm-10 justify-content-end my-2 pt-4" id="nav">
+			<ul class="nav__items d-flex text-light">
+				<a class="nav__items__item mx-2">CONCERTS</a>
+				<a class="nav__items__item mx-2">CONTESTS</a>
+				<a class="nav__items__item mx-2">CALENDER</a>
+				<a class="nav__items__item mx-2">CONNECT</a>
+			</ul>
+		</div>
+		<div class="burger" id="burger">
+			<span className="burger-line"></span>
+		</div>
+	</header>
+	<main>
+		<div class="banner">
+			<div class="container">
+				<section class="description panel blue">
+					<div class="intro">
+						<h1>
+							<span class='box'></span>
+							<span class='equation'>FingerstyleChina is</span>
+							<span class='text'></span>
+							<span class='cursor'>_</span>
+						</h1>
+
+
+						<div class="arrow bounce"></div>
+					</div>
+				</section>
+
+				<section class="panel red">
+					<span class='banner-date'>
+						20 Jun 2021
+
+
+					</span>
+					<p class='banner-event'>Live Concert</p>
+					<img src="./assets/asset1.jpg" />
+				</section>
+				<section class="panel orange">
+					<span class='banner-date'>
+						20 Aug 2021
+					</span>
 
 					<p class='banner-event'>
-					
-							Masterclass / Competition w/ Tommy Emmanual
-						</p>
-						<img src="./assets/asset2.jpg" />
-					</section>
-					<section class="panel purple">
-						
-						<span class='banner-date'>20 Aug 2021</span>	
-						
-					<p class='banner-event'>
-							Guitar Festival
-						</p>
-						<img src="./assets/asset3.jpg" />
-					</section>
-				</div>
-			</div>
-			<div class="introduction">
-				<div class="cInnerContent">
-					<h1 class="header-section gs_reveal ipsType_center">
-						Fingerstyle China is Asia's biggest network for
-						fingerstyle players
-					</h1>
 
-					<div class="features">
-						<div
-							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-						>
-							<div
-								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
-							>
-								<div class="card">
-									<img
-										width="479"
-										src="./assets/asset4.png"
-										alt=""
-									/>
-								</div>
+						Masterclass / Competition w/ Tommy Emmanual
+					</p>
+					<img src="./assets/asset2.jpg" />
+				</section>
+				<section class="panel purple">
+
+					<span class='banner-date'>20 Aug 2021</span>
+
+					<p class='banner-event'>
+						Guitar Festival
+					</p>
+					<img src="./assets/asset3.jpg" />
+				</section>
+			</div>
+		</div>
+		<div class="introduction">
+			<div class="cInnerContent">
+				<h2 class="header-section headline gs_reveal ipsType_center">
+					Fingerstyle China
+				</h2>
+
+				<div class="features">
+					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
+							<div class="card">
+								<img width="479" src="./assets/asset4.png" alt="" />
 							</div>
+						</div>
 
-							<div class="ipsGrid_span7 ipsType_left">
-								<h2 class="heading_large gs_reveal">
-									 
-									<strong>Contests</strong> 
-									
-								</h2>
-								<p class="gs_reveal">
-									<h3>International guitar contest series branded as "WAGF" and ukulele contests branded as "MAUF" provide yearly opportunies for all guitarists to showcase their original music and playing skills. </h2>
-									<a href="#">learn more</a>
+						<div class="ipsGrid_span7 ipsType_left">
+							<h2 class="heading_large gs_reveal">
+
+								<strong>Contests</strong>
+
+							</h2>
+							<p class="gs_reveal">
+							<h3>International guitar contest series branded as "WAGF" and ukulele contests branded as
+								"MAUF" provide yearly opportunies for all guitarists to showcase their original music
+								and playing skills. </h2>
+								<a href="#">learn more</a>
 								</p>
+						</div>
+					</div>
+
+					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+						<div class="ipsGrid_span7 ipsType_right">
+							<h2 class="heading_large gs_reveal">
+
+								<strong>Concerts</strong>
+							</h2>
+							<h3> With influence reaching all Chineses provinces we hold yearly 120 concerts in a year
+								</h2>
+								<a href="#">learn more</a>
+						</div>
+
+						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
+							<div class="card">
+								<img width="479" src="https://picsum.photos/479/479?index=2" alt="" />
+							</div>
+						</div>
+					</div>
+
+					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft">
+							<div class="card">
+								<img width="479" src="https://picsum.photos/479/479?index=3" alt="" />
 							</div>
 						</div>
 
-						<div
-							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-						>
-							<div class="ipsGrid_span7 ipsType_right">
-								<h2 class="heading_large gs_reveal">
-									 
-									<strong>Concerts</strong>  
-								</h2>
-								<h3> With influence reaching all Chineses provinces we hold yearly 120 concerts in a year</h2>
-									<a href="#">learn more</a>
-							</div>
+						<div class="ipsGrid_span7 ipsType_left">
+							<h2 class="heading_large gs_reveal">
 
-							<div
-								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
-							>
-								<div class="card">
-									<img
-										width="479"
-										src="https://picsum.photos/479/479?index=2"
-										alt=""
-									/>
-								</div>
-							</div>
+								<strong>Guitar Education</strong>
+							</h2>
+							<h3 class="gs_reveal">
+								We hold regular Masterclasses and publish guitar books tailored for guitar players of
+								all levels
+							</h3>
+							<a href="#">download brochure (Chinese)</a>
+						</div>
+					</div>
+
+					<div class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone">
+						<div class="ipsGrid_span7 ipsType_right">
+							<h2 class="heading_large gs_reveal">
+								<strong>Media Network</strong>
+							</h2>
+							<h3 class="gs_reveal">
+								We connect a network of more than a million guitar lovers via wechat, weibo, offline
+								events and local outreaches
+							</h3>
+							<a href="#">reach out</a>
 						</div>
 
-						<div
-							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-						>
-							<div
-								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromLeft"
-							>
-								<div class="card">
-									<img
-										width="479"
-										src="https://picsum.photos/479/479?index=3"
-										alt=""
-									/>
-								</div>
-							</div>
-
-							<div class="ipsGrid_span7 ipsType_left">
-								<h2 class="heading_large gs_reveal">
-									
-									<strong>Guitar Education</strong>  
-								</h2>
-								<h3 class="gs_reveal">
-									 We hold regular Masterclasses and publish guitar books tailored for guitar players of all levels
-								</h3>
-								<a href="#">download brochure (Chinese)</a>
-							</div>
-						</div>
-
-						<div
-							class="feature ipsSpacer_bottom_double ipsGrid ipsGrid_collapsePhone"
-						>
-							<div class="ipsGrid_span7 ipsType_right">
-								<h2 class="heading_large gs_reveal">
-									<strong>Media Network</strong> 
-								</h2>
-								<h3 class="gs_reveal">
-								 We connect a network of more than a million guitar lovers via wechat, weibo, offline events and local outreaches
-								</h3>
-								<a href="#">reach out</a>
-							</div>
-
-							<div
-								class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight"
-							>
-								<div class="card">
-									<img
-										width="479"
-										src="https://picsum.photos/479/479?index=4"
-										alt=""
-									/>
-								</div>
+						<div class="featured-image-container ipsGrid_span5 gs_reveal gs_reveal_fromRight">
+							<div class="card">
+								<img width="479" src="https://picsum.photos/479/479?index=4" alt="" />
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-			<hr>
-			<div class="calendar">
-				<h1 class='m-2'>What's New</h1>
-				<div id="filters" class="button-group">
-					<button class="btn is-checked" data-filter="*">All</button>
-				 
-				 
-					<button class="btn is-checked" data-filter=".contests">
-						Contests
-					</button>
-				 
-				 
-					<button class="btn is-checked" data-filter=".talents">
-						Talents
-					</button>
-				 
-					<button class="btn is-checked" data-filter=".concerts">
-						Concerts
-					</button>
-				</div>
-				<div class="grid">
-					<div class="grid-item news border m-2 p-3">
-						<a href="#"><img src="./assets/asset1.jpg" class="mini-img" /></a>
-						<h3 class='p-4'>Competition result is out</h3>
-						<h4>and the prizes are...</h4>
-						<a href="#">read more...</a>
-					</div>
-					<div class="grid-item contest border m-2 p-3">
-						<a href=""><img src="./assets/asset1.jpg" class="mini-img" /></a>
-							<h3 class='p-4'>Competition result is out</h3>
-						<h4>and the prizes are...</h4>
-						<a href="#">read more...</a>
-					</div>
-					<div class="grid-item talents border m-2 p-3">
-						<img src="./assets/asset1.jpg" class="mini-img" />
-							<h3 class='p-4'>Jaco Liu's new original piece</h3>
-						<h4>is now out</h4>
-						<a href="#">read more...</a>
-					</div>
-					<div class="grid-item concerts border m-2 p-3">
-					<img src="./assets/asset1.jpg" class="mini-img"/>
-						<h3 class='p-4'>Live Concert Ewan Dobson</h3>
-						<h4>on availabe on weTV Platform</h4>
-						<a href="#">read more...</a>
-					</div>
-				</div>
-			</div>
-		</main>
-		<footer id="footer" class="bg-dark text-white py-5">
-			<div class="foot">
-				<div class="row">
-					<div class="col-lg-3">
-						<h4 class="">Fingerstyle China</h4>
-						<p class="font-small sand text-white-50">
-							Lorem, ipsum dolor sit amet consectetur adipisicing
-							elit. Necessitatibus quas commodi, aliquid rerum
-							facere excepturi a at et inventore facilis?
-						</p>
-					</div>
-					<div class="col-lg-4 col-12">
-						<h4 class="font-big">News Letter</h4>
-						<form action="" class="form-row">
-							<div class="col d-flex">
-								<input
-									type="email"
-									class="form-control"
-									placeholder="Email*"
-								/>
+		</div>
+		<hr>
+		<div class="calendar">
+			<h1 class='headline text-center'>Coming up</h1>
+			<div id="filters" class="button-group d-flex justify-content-center mb-4">
+				<button class="btn is-checked " data-filter="*">All</button>
 
-								<button
-									type="submit"
-									class="btn btn-primary mx-2"
-								>
-									Subscribe
-								</button>
-							</div>
-						</form>
+
+				<button class="btn is-checked" data-filter=".contests">
+					Contests
+				</button>
+
+
+				<button class="btn is-checked" data-filter=".talents">
+					Talents
+				</button>
+
+				<button class="btn is-checked" data-filter=".concerts">
+					Concerts
+				</button>
+			</div>
+			<div class="grid">
+				<div class="grid-item concerts border m-2 p-3">
+					<a href="#"><img src="./assets/asset1.jpg" class="blog-preview" /></a>
+					<h3 class='blog-title'>Competition result is out</h3>
+					<h4 class='blog-intro'>and the prizes are...</h4>
+					<a href="#" class='p-1'>read more...</a>
+				</div>
+				<div class="grid-item contests border m-2 p-3">
+					<a href=""><img src="./assets/asset1.jpg" class="blog-preview" /></a>
+					<h3 class='blog-title'>Competition result is out</h3>
+					<h4 class='blog-intro'>and the prizes are...</h4>
+					<a href="#" class='p-1'>read more...</a>
+				</div>
+				<div class="grid-item talents border m-2 p-3">
+					<img src="./assets/asset1.jpg" class="blog-preview" />
+					<h3 class='blog-title'>Jaco Liu's new original piece</h3>
+					<h4 class='blog-intro'>is now out</h4>
+					<a href="#" class='p-1'>read more...</a>
+				</div>
+				 
+			</div>
+		</div>
+		<hr>
+		<div class="contact p-3">
+			<h1 class="headline text-center">Get in Touch</h1>
+			<div class="contact-container d-flex justify-content-around">
+				<div class="contact-head col-sm-2 pb-5"><img src="./assets/color-logo.jpeg" class="img-fluid"><p class="text-center m-4">Please attach your youtube url if you want to be heard in China</p></div>
+				
+				<form action="" class="form-row col-sm-7 pb-5">
+					<div class=" d-flex flex-column">
+						<input type="email" class="form-control m-2" placeholder="Email*" />
+						<input type="url" class="form-control  m-2" placeholder="URL" />
+						<input type="text" class="form-control  m-2" placeholder="Message*" />
+						<button type="submit" class="btn btn-primary mx-2">
+							Submit
+						</button>
 					</div>
-					<div class="col-lg-2 col-12">
-						<h4>Information</h4>
-						<div class="d-flex flex-column flex-wrap">
-							<a href="" class="font-big text-white-50 pb-1"
-								>About Us</a
-							>
-							<a href="" class="font-big text-white-50 pb-1"
-								>Join Us</a
-							>
-							<a href="" class="font-big text-white-50 pb-1"
-								>Privacy Policy</a
-							>
+				</form>
+			</div>
+		</div>
+	</main>
+	<footer id="footer" class="text-white py-5">
+		<div class="foot">
+			<div class="row">
+				<div class="col-lg-3">
+					<h4 class="">Fingerstyle China</h4>
+					<p class="font-small sand text-white-50">
+						Lorem, ipsum dolor sit amet consectetur adipisicing
+						elit. Necessitatibus quas commodi, aliquid rerum
+						facere excepturi a at et inventore facilis?
+					</p>
+				</div>
+				<div class="col-lg-4 col-12">
+					<h4 class="font-big">News Letter</h4>
+					<form action="" class="form-row">
+						<div class="col d-flex">
+							<input type="email" class="form-control" placeholder="Email*" />
+
+							<button type="submit" class="btn btn-primary mx-2">
+								Subscribe
+							</button>
 						</div>
+					</form>
+				</div>
+				<div class="col-lg-2 col-12">
+					<h4>Information</h4>
+					<div class="d-flex flex-column flex-wrap">
+						<a href="" class="font-big text-white-50 pb-1">About Us</a>
+						<a href="" class="font-big text-white-50 pb-1">Join Us</a>
+						<a href="" class="font-big text-white-50 pb-1">Privacy Policy</a>
 					</div>
-					<div class="col-lg-2 col-12"><h4>Account</h4></div>
+				</div>
+				<div class="col-lg-2 col-12">
+					<h4>Account</h4>
 				</div>
 			</div>
-		</footer>
-		<div class="copyright text-center bg-dark text-white py-2">
-			<p>
-				&copy;Copyright 2020. Designed by
-				<a href="guitong.de">Guitong</a>
-			</p>
 		</div>
 
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-			integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-			integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
-			crossorigin="anonymous"
-		></script>
+	</footer>
+	<div class="copyright text-center bg-dark text-white py-2">
+		<p>
+			&copy;Copyright 2020. Designed by
+			<a href="guitong.de">Guitong</a>
+		</p>
+	</div>
 
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-			integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-			integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-			integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
-			integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
-			integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"
-			integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q=="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"
-			integrity="sha512-IFHLRBbvAOJqC8OBEvPO/3ZnuCe/6nCHtmYk82FPOXI/scNNncm5czPI0aJflJABm6VPNt7Nn3MPMhi/siyLKw=="
-			crossorigin="anonymous"
-		></script>
-		<script
-			src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.6.1/smooth-scrollbar.min.js"
-			integrity="sha512-UmrYi6FvCoDgKRTzLOvAj/egIrJtoTIQV0u/stO1h5f4DQNcXnhwnY0rel5zduc3CNqO6LfVI8ZaGUKCrLIo7g=="
-			crossorigin="anonymous"
-			referrerpolicy="no-referrer"
-		></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/EasePack.min.js"></script>
-		<script src="index.js"></script>
-	</body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+		integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+		integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+		crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+		integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+		integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+		integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
+		integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"
+		integrity="sha512-Q+G390ZU2qKo+e4q+kVcJknwfGjKJOdyu5mVMcR95NqL6XaF4lY4nsSvIVB3NDP54ACsS9rqhE1DVqgpApl//Q=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"
+		integrity="sha512-IFHLRBbvAOJqC8OBEvPO/3ZnuCe/6nCHtmYk82FPOXI/scNNncm5czPI0aJflJABm6VPNt7Nn3MPMhi/siyLKw=="
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.6.1/smooth-scrollbar.min.js"
+		integrity="sha512-UmrYi6FvCoDgKRTzLOvAj/egIrJtoTIQV0u/stO1h5f4DQNcXnhwnY0rel5zduc3CNqO6LfVI8ZaGUKCrLIo7g=="
+		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/EasePack.min.js"></script>
+	<script src="listing.js"></script>
+	<script src="index.js"></script>
+</body>
+
 </html>
