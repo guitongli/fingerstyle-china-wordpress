@@ -453,26 +453,34 @@ h2.heading_large {
   width: 30vw;
 }
 
-.blog-intro {
+.blog-text {
+  margin-left: 10px;
+}
+
+.blog-date {
   font-weight: 800;
-  font-size: 2.4rem;
-  margin: 24px;
+  font-size: 1.4rem;
+  color: #fca311;
+}
+.blog-date .day {
+  font-size: 2rem;
+  border-bottom: 5px solid #fca311;
+}
+
+.blog-intro {
+  font-weight: 200;
+  font-family: "Cabin", sans-serif;
 }
 
 .blog-title {
-  font-style: none;
-  font-weight: 200;
-}
-
-.grid {
-  width: 100vw;
-  display: inline-block;
-  position: relative;
+  font-weight: bold;
+  font-family: "Cabin", sans-serif;
+  font-size: 2.4rem;
 }
 
 .grid-item {
   border-radius: 8px;
-  margin: 10px;
+  margin: 20px;
   display: inline-block;
 }
 .grid-item h3 {
@@ -510,7 +518,7 @@ a:hover {
 .headline {
   font-weight: 700;
   font-size: 5.5rem;
-  color: #1d273d;
+  color: black;
   margin: 120px;
 }
 

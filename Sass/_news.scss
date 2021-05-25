@@ -1,28 +1,41 @@
 .blog-preview {
 	width: 30vw;
 }
-.blog-intro {
+
+.blog-text {
+	margin-left: 10px;
+}
+.blog-date {
 	font-weight: 800;
-	font-size: 2.4rem;
-	margin: 24px;
+	font-size: 1.4rem;
+	color: $yellow;
+	.day {
+		font-size: 2rem;
+		// position: relative;
+		// top: 10%;
+		border-bottom: 5px solid $yellow;
+	}
+}
+.blog-intro {
+	font-weight: 200;
+	font-family: $sans;
 }
 .blog-title {
 	// margin-top: 47px;
 
 	// font-family: $sans;
-	font-style: none;
-	font-weight: 200;
+
+	font-weight: bold;
+	font-family: $sans;
+	font-size: 2.4rem;
 }
 
-.grid {
-	width: 100vw;
-
-	display: inline-block;
-	position: relative;
-}
+// .grid {
+// 	display: inline-block;
+// }
 .grid-item {
 	border-radius: 8px;
-	margin: 10px;
+	margin: 20px;
 
 	h3 {
 		margin: 3px;
