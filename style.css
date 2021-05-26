@@ -480,7 +480,7 @@ h2.heading_large {
 
 .grid-item {
   border-radius: 8px;
-  margin: 20px;
+  margin: 50px;
   display: inline-block;
 }
 .grid-item h3 {
@@ -520,6 +520,12 @@ a:hover {
   font-size: 5.5rem;
   color: black;
   margin: 120px;
+}
+
+.blog-text {
+  margin-top: 30px;
+  font-size: 2rem;
+  font-weight: 200;
 }
 
 * {
